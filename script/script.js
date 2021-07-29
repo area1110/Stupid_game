@@ -117,8 +117,13 @@ function drawMainChar() {
 
 var wB = width - 10,
   hB = height - 10;
-var bullLoc = new Object();
-(bullLoc.xB = head.x), (bullLoc.yB = head.y);
+
+class bullet {
+  constructor() {
+    this.xB = head.x;
+    this.yB = head.y;
+  }
+}
 
 function drawBullet() {
   ctx.beginPath();
@@ -127,38 +132,29 @@ function drawBullet() {
   ctx.closePath();
 }
 
-function shoot(){
-
+function shoot() {
+  var shooted = new bullet();
+  
 }
 
-function draw() {
-  ctx.clearRect(0, 0, main.width, main.height);
-  drawMainChar();
-  drawBullet();
-}
-
-// function shoot(){
-//   switch(){
-
-//   }
-// }
-
-function up(){
+function up() {
   if (statusMain != "u") statusMain = "u";
   else goesUp();
 }
 
-function down(){if (statusMain != "d") statusMain = "d";
-        else goesDown();}
-
-function left(){
-  if (statusMain != "l") statusMain = "l";
-        else goesLeft();
+function down() {
+  if (statusMain != "d") statusMain = "d";
+  else goesDown();
 }
 
-function right(){
+function left() {
+  if (statusMain != "l") statusMain = "l";
+  else goesLeft();
+}
+
+function right() {
   if (statusMain != "r") statusMain = "r";
-        else goesRight();
+  else goesRight();
 }
 
 window.addEventListener(
@@ -198,6 +194,12 @@ window.addEventListener(
   true
 );
 
-setInterval(draw, 1);
+function draw() {
+  ctx.clearRect(0, 0, main.width, main.height);
+  drawMainChar();
+  drawBullet();
+}
+
+var start = setInterval(draw, 1);
 // the last option dispatches the event to the listener first,
 // then dispatches event to window
