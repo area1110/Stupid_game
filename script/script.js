@@ -1,18 +1,19 @@
 var main = document.getElementById("mainView");
 var ctx = main.getContext("2d");
 var pix = ctx.create;
-var width = 5,
-  heigth = 5;
-
+var width = 25,
+  heigth = 25;
 var x = 0,
   y = 0;
-var move = 5;
+
+var move = 25;
+
 ctx.beginPath();
 ctx.rect(x, y, width, heigth);
 ctx.fill();
 
 function right() {
-  if (x != main.width) {
+  if (x != main.width-25) {
     x += move;
   }
  
@@ -24,7 +25,7 @@ function left() {
 }
 
 function down() {
-  if (y != main.height - 5) {
+  if (y != main.height - 25) {
     y += move;
   }
   //   ctx.clearRect(0, 0, main.width, main.height);
