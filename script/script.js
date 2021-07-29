@@ -8,21 +8,21 @@ var x = main.width / 2 - width,
 
 //---Moving Function---
 var move = 25;
-function right() {
+function goesRight() {
   if (x < main.width - 3 * width) x += move;
 }
 
-function left() {
+function goesLeft() {
   if (x > 0) x -= move;
 }
 
-function down() {
+function goesDown() {
   if (y < main.height - 2 * height) {
     y += move;
   }
 }
 
-function up() {
+function goesUp() {
   if (y > 0) {
     y -= move;
   }
@@ -128,7 +128,7 @@ function drawBullet() {
 }
 
 function shoot(){
-  
+
 }
 
 function draw() {
@@ -143,6 +143,24 @@ function draw() {
 //   }
 // }
 
+function up(){
+  if (statusMain != "u") statusMain = "u";
+  else goesUp();
+}
+
+function down(){if (statusMain != "d") statusMain = "d";
+        else goesDown();}
+
+function left(){
+  if (statusMain != "l") statusMain = "l";
+        else goesLeft();
+}
+
+function right(){
+  if (statusMain != "r") statusMain = "r";
+        else goesRight();
+}
+
 window.addEventListener(
   "keydown",
   function (event) {
@@ -153,24 +171,19 @@ window.addEventListener(
     switch (event.key) {
       case "ArrowDown":
         // code for "down arrow" key press.
-
-        if (statusMain != "d") statusMain = "d";
-        else down();
+        down();
         break;
       case "ArrowUp":
         // code for "up arrow" key press.
-        if (statusMain != "u") statusMain = "u";
-        else up();
+        up();
         break;
       case "ArrowLeft":
         // code for "left arrow" key press.
-        if (statusMain != "l") statusMain = "l";
-        else left();
+        left();
         break;
       case "ArrowRight":
         // code for "right arrow" key press.
-        if (statusMain != "r") statusMain = "r";
-        else right();
+        right();
         break;
       case " ":
         shoot();
