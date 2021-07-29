@@ -4,10 +4,24 @@
     margin: 0 auto;
 }
 
+#container {
+    margin: 5em 15em;
+}
+
 #mainElement {
     background-color: gray;
 }
 
-#test {
-    color: red;
+#upBut, #downBut {
+    display: block;
+    margin: 0 auto;
 }
+
+#control{
+    float: right;
+}
+
+button {
+    font-size: 2em;
+}
+

@@ -2,19 +2,22 @@
 <html lang="en">
   <head>
     <title>Chiu Chiu</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="user-scalable=no" />
+
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <canvas id="mainView" width="875" height="875"></canvas>
+    <div id="container">
+      
+      <div id="control">
+        <button id="upBut" class="controller" onclick="up()">Up</button>
+        <button id="leftBut" class="controller"  onclick="left()">Left</button>
+        <button id="rightBut" class="controller"  onclick="right()">Right</button>
+        <button id="downBut" class="controller"  onclick="down()">Down</button>
+      </div>
+    </div>
 
     <script src="script/script.js"></script>
-    <button onclick="left()">Left</button>
-    <button onclick="right()">Right</button>
-    <button onclick="up()">Up</button>
-    <button onclick="down()">Down</button>
   </body>
 </html>
