@@ -1,0 +1,13 @@
+#mainView {
+    border: 1px solid black;
+    display: flex;
+    margin: 0 auto;
+}
+
+#mainElement {
+    background-color: gray;
+}
+
+#test {
+    color: red;
+}
