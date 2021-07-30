@@ -1,8 +1,10 @@
 var main = document.getElementById("mainView");
 var ctx = main.getContext("2d");
 var pix = ctx.create;
-var width = main.width / 36,
-  height = main.height / 36;
+import {pixel} from './variable.js';
+
+var width = pixel.width ,
+  height = pixel.height;
 var x = main.width / 2 - width,
   y = main.height - 2 * height;
 
@@ -115,22 +117,22 @@ function drawMainChar() {
 
 //-------------------------------------------------
 
-var wB = width - 10,
-  hB = height - 10;
+// var wB = width - 10,
+//   hB = height - 10;
 
-class bullet {
-  constructor() {
-    this.xB = head.x;
-    this.yB = head.y;
-  }
-}
+// class bullet {
+//   constructor() {
+//     this.xB = head.x;
+//     this.yB = head.y;
+//   }
+// }
 
-function drawBullet() {
-  ctx.beginPath();
-  ctx.rect(xB, yB, wB, hB);
-  ctx.fill();
-  ctx.closePath();
-}
+// function drawBullet() {
+//   ctx.beginPath();
+//   ctx.rect(xB, yB, wB, hB);
+//   ctx.fill();
+//   ctx.closePath();
+// }
 
 function shoot() {
   var shooted = new bullet();
@@ -182,7 +184,7 @@ window.addEventListener(
         right();
         break;
       case " ":
-        shoot();
+        // shoot();
         break;
       default:
         return; // Quit when this doesn't handle the key event.
@@ -197,7 +199,7 @@ window.addEventListener(
 function draw() {
   ctx.clearRect(0, 0, main.width, main.height);
   drawMainChar();
-  drawBullet();
+  // drawBullet();
 }
 
 var start = setInterval(draw, 1);
